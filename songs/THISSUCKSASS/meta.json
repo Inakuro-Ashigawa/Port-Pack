@@ -1,0 +1,17 @@
+{
+	"beatsPerMeasure": 4,
+	"opponentModeAllowed": false,
+	"coopAllowed": false,
+	"stepsPerBeat": 4,
+	"bpm": 204,
+	"difficulties": [
+		"HARD"
+	],
+	"needsVoices": true,
+	"parsedColor": -15083726,
+	"displayName": "THISSUCKSASS",
+	"icon": "angry-luigi",
+	"name": "THISSUCKSASS",
+	"color": "#19D732",
+	"customValues": {}
+}
