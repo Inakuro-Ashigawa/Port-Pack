@@ -1,0 +1,35 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "oh you",
+			"loop": false,
+			"name": "oh you"
+		}
+	],
+	"no_antialiasing": true,
+	"image": "characters/angryluigitalk",
+	"position": [
+		30,
+		130
+	],
+	"healthicon": "angryluigi",
+	"flip_x": false,
+	"healthbar_colors": [
+		58,
+		169,
+		67
+	],
+	"camera_position": [
+		-30,
+		-80
+	],
+	"sing_duration": 6.1,
+	"scale": 1.1,
+	"_editor_isPlayer": false
+}

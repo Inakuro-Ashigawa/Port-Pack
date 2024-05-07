@@ -1,0 +1,11 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.6" name="angry" folder="stages/angry/" startCamPosY="450" startCamPosX="500">
+
+	<sprite name="bg" x="-1200" y="-950" sprite="bg" scroll="1" scale="2" updateHitbox="true"/>
+	<sprite name="fire" x="0" y="150" sprite="fire" scroll="1" scale="5"/>
+	<sprite name="splash" x="-200" y="200" sprite="splash" scroll="1" scale="1"/>
+	<girlfriend />
+	<dad />
+	<boyfriend x="870"/>
+	<sprite name="rain" x="0" y="-200" sprite="rain" scroll="1" scale="2"/>
+</stage>
