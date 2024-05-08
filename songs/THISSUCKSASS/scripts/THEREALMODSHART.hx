@@ -23,5 +23,6 @@ function beatHit(curBeat) {
 		case 264: waveTar = 25;
 		case 328: waveTar = 0;
 		case 336: waveTar = 35;
+		case 592: waveTar = 12.5;
 	}
 }
