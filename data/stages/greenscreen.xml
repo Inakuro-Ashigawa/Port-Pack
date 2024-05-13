@@ -1,0 +1,4 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="1" name="stage" folder="">
+	<combo> <property type="bool" name="visible" value="false"/> </combo>
+</stage>
