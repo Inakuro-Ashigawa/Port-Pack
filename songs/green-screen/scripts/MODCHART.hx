@@ -1,12 +1,11 @@
 
 var tween:FlxTween = null;
-var bouncy = false;
+var bouncy:Bool = false;
 var defSX = 0;
 var defSY = 0;
 var defY = 0;
 function postCreate() {
-	camGame.zoom = 1;
-	defaultCamZoom = 1;
+	camGame.zoom = defaultCamZoom = 1;
 	tween = FlxTween.tween(camGame, {zoom: 1}, 0.8, {ease: FlxEase.quadIn});
 	tween.cancel();
 	for (strums in strumLines.members) {
@@ -27,30 +26,17 @@ function beatHit(curBeat) {
 	switch (curBeat) {
 		case 0:
 		trace("yeah");
-		case 31:
+		case 31 | 127 | 191;
 		tween = FlxTween.tween(camGame, {zoom: 1.05}, 0.6, {ease: FlxEase.quadIn});
-		case 32:
+		case 32 | 128 | 192:
 		tween.cancel();
-		case 127:
-		tween = FlxTween.tween(camGame, {zoom: 1.05}, 0.6, {ease: FlxEase.quadIn});
-		case 128:
-		tween.cancel();
-		case 191:
-		tween = FlxTween.tween(camGame, {zoom: 1.05}, 0.6, {ease: FlxEase.quadIn});
-		case 192:
-		tween.cancel();
-		case 254:
+		case 254 | 318:
 		tween = FlxTween.tween(camGame, {zoom: 1.05}, 1.2, {ease: FlxEase.quadIn});
-		case 256:
+		case 256 | 320:
 		tween.cancel();
-		bouncy = true;
-		case 318:
-		tween = FlxTween.tween(camGame, {zoom: 1.05}, 1.2, {ease: FlxEase.quadIn});
-		case 320:
-		tween.cancel();
-		bouncy = false;
+		bouncy = !bouncy;
 	}
-	if (bouncy == true) {
+	if (bouncy) {
 		for (strums in strumLines.members) {
 			for (strum in strums.members) {
 				//set the values
