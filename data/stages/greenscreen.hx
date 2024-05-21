@@ -1,59 +1,43 @@
-var fade;
-var curTarget = 0;
-var shader:CustomShader = null;
+var fade = new FlxSprite();
+var curTarget:Int = 0;
 var charCam:FlxCamera;
-
-var shader:CustomShader = null;
-var end = false;
+var end:Bool = false;
 
 function create() {
-	bg = new FlxSprite(0, 0);
-	bg.makeGraphic(5000, 5000, 0xFF0F380F);
-	insert(members.indexOf(dad), bg);
-	fade = new FlxSprite();
-	fade.loadGraphic(Paths.image('stages/greenscreen/fade2'), true, 125, 76);
-	fade.scale.x = fade.scale.y = 6;
-	fade.screenCenter();
+	insert(members.indexOf(dad), bg = new FlxSprite().makeGraphic(5000, 5000, 0xFF0F380F));
+
+	add(fade = new FlxSprite().loadGraphic(Paths.image('stages/greenscreen/fade2'), true, 125, 76).screenCenter());
+	fade.scale.set(6, 6);
 	fade.animation.add("idle", [0], 18);
 	fade.animation.add("outHold", [4], 18, true);
 	fade.animation.add("fade", [0,1,2,3,4,3,2,1,0], 18, false);
 	fade.animation.add("fadeIn", [0,1,2,3,4], 18, false);
 	fade.animation.add("fadeOut", [4,3,2,1,0], 18, false);
-	add(fade);
 	fade.camera = camGame;
+	fade.animation.play("outHold");
+	
 	dad.screenCenter();
 	boyfriend.screenCenter();
-	fade.animation.play("outHold");
 
-	shader = new CustomShader("yoshiShaders/cyclesd");
+	camGame.addShader(shader = new CustomShader("yoshiShaders/cyclesd"));
 	shader.amount = 0;
 	shader.pixel = 1;
-
-	camGame.addShader(shader);
 }
 
 function postUpdate() {
 	//trace(fade.animation.name + " & " + fade.animation.finished);
-	if (fade.animation.name == "fadeOut" && fade.animation.finished) {
+	if (fade.animation.name == "fadeOut" && fade.animation.finished)
 		fade.animation.play("idle");
-	}
 	if (fade.animation.name == "fadeIn" && fade.animation.finished && !end) {
-		if (curTarget == 0) {
-			dad.visible = true;
-		}
-		if (curTarget == 1) {
-			dad.visible = false;
-		}
+		dad.visible = curTarget == 0;
 		fade.animation.play("fadeOut");
 	}
 	boyfriend.visible = !dad.visible;
 	shader.amount = (camGame.zoom - 1) * 50;
 }
 
-function beatHit(curBeat) {
-	if (curBeat == 0) {
-		fade.animation.play("fadeOut");
-	}
+function beatHit(curBeat:Int) {
+	if (curBeat == 0) fade.animation.play("fadeOut");
 	if (curBeat == 332) end = true;
 }
 function onEvent(e) {
