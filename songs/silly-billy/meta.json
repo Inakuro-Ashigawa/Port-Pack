@@ -1,0 +1,16 @@
+{
+	"beatsPerMeasure": 4,
+	"opponentModeAllowed": false,
+	"coopAllowed": false,
+	"stepsPerBeat": 4,
+	"bpm": 173,
+	"difficulties": [
+		"hard"
+	],
+	"needsVoices": true,
+	"parsedColor": -7108865,
+	"displayName": "Silly Billy",
+	"icon": "Silly/bficon",
+	"name": "silly-billy",
+	"color": "#9386FF"
+}
