@@ -1,0 +1,28 @@
+<!DOCTYPE codename-engine-stage>
+<stage folder="stages/Silly" zoom="0.73">
+	<gf/>
+        <sprite name="random" sprite="/bgAssets">
+		<anim loop="false" x="0" anim="Yo_y_mi_silly_pana" fps="24" y="0" type="beat" name="idle"/>
+	</sprite>
+
+	<sprite sprite="/broken_mirror" name="broken"/>
+	<sprite sprite="/silly_mirror" name="normal"/>
+
+        <sprite name="floor" sprite="/bgAssets">
+		<anim loop="false" x="0" anim="Silly_floor" fps="24" y="0" type="beat" name="idle"/>
+	</sprite>
+        <sprite name="silly1" sprite="/bgAssets">
+		<anim loop="false" x="0" anim="Silly_idk_2" fps="24" y="0" type="beat" name="idle"/>
+	</sprite>
+        <sprite name="silly1" sprite="/bgAssets">
+		<anim loop="false" x="0" anim="Silly_idk_1" fps="24" y="0" type="beat" name="idle"/>
+	</sprite>
+	<sprite sprite="/Silly_clouds" name="mist"/>
+
+
+
+
+	<dad x="840" y="840"/>
+	<bf x="1630" y="900"/>
+	<combo x="1717.5" y="973"/>
+</stage>
