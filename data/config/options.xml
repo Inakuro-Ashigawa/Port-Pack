@@ -1,0 +1,6 @@
+<!DOCTYPE codename-mod-options>
+<menu name="Port Pack" desc="Funny shits">
+
+  <checkbox id="Videos" name="Videos" desc="If checked, Videos will be loaded"/>
+
+</menu>
