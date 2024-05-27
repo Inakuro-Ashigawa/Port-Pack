@@ -1,0 +1,9 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="1" name="biden" folder="stages/skibidi/" startCamPosY="450" startCamPosX="500">
+	<combo> <property type="bool" name="visible" value="false"/> </combo>
+	<dad />
+	<sprite name="bg" x="40" y="-40" sprite="lateShowBG" scroll="1" scale="1" updateHitbox="true"/>
+	<sprite name="skibibg" x="40" y="-40" sprite="bg" scroll="1" scale="1" updateHitbox="true"/>
+	<boyfriend x="520" y="150" scale="1"/>
+	<sprite name="skibifg" x="40" y="-40" sprite="frontToilet" scroll="1" scale="1" updateHitbox="true"/>
+</stage>
