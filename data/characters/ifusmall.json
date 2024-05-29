@@ -1,0 +1,56 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 14,
+			"anim": "danceLeft",
+			"loop": false,
+			"name": "ifusmall danceleft"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 14,
+			"anim": "danceRight",
+			"loop": false,
+			"name": "ifusmall danceright"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 22,
+			"anim": "approach",
+			"loop": false,
+			"name": "ifusmall approach"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/ifusmall",
+	"position": [
+		0,
+		-200
+	],
+	"healthicon": "ifu",
+	"flip_x": false,
+	"healthbar_colors": [
+		161,
+		161,
+		161
+	],
+	"camera_position": [
+		-150,
+		70
+	],
+	"sing_duration": 30,
+	"scale": 1
+}

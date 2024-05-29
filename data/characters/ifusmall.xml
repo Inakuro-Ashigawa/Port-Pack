@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character isPlayer="false" isGF="true" flipX="false" holdTime="30" y="-200" camX="-150" camY="70"> <!-- CONVERTED VIA psychjsontocodenamexml.py by Burgerballs -->
+
+   <anim name="danceLeft" anim="ifusmall danceleft" fps="14" loop="false" x="0" y="0"/>
+   <anim name="danceRight" anim="ifusmall danceright" fps="14" loop="false" x="0" y="0"/>
+   <anim name="approach" anim="ifusmall approach" fps="22" loop="false" x="0" y="0"/>
+
+</character>

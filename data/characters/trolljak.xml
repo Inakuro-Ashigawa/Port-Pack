@@ -1,0 +1,10 @@
+<!DOCTYPE codename-engine-character>
+<character isPlayer="false" flipX="false" holdTime="6.1" x="-100" y="-150" camx="50" camy="100"> <!-- CONVERTED VIA psychjsontocodenamexml.py by Burgerballs -->
+
+   <anim name="idle" anim="trolljak idle" fps="16" loop="false" x="0" y="0"/>
+   <anim name="singLEFT" anim="trolljak left" fps="20" loop="false" x="-10" y="0"/>
+   <anim name="singDOWN" anim="trolljak down" fps="20" loop="false" x="-10" y="-10"/>
+   <anim name="singUP" anim="trolljak up" fps="20" loop="false" x="0" y="0"/>
+   <anim name="singRIGHT" anim="trolljak right" fps="20" loop="false" x="70" y="0"/>
+
+</character>

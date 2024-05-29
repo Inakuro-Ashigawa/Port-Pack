@@ -1,0 +1,12 @@
+<!DOCTYPE codename-engine-character>
+<character isPlayer="false" flipX="false" holdTime="6.1" y="-80" camX="-540" camY="-710" scale="1.8"> <!-- CONVERTED VIA psychjsontocodenamexml.py by Burgerballs -->
+
+   <anim name="singLEFT" anim="IFU left" fps="16" loop="false" x="0" y="0"/>
+   <anim name="singDOWN" anim="IFU down" fps="16" loop="false" x="0" y="0"/>
+   <anim name="singUP" anim="IFU up" fps="16" loop="false" x="0" y="0"/>
+   <anim name="singRIGHT" anim="IFU right" fps="16" loop="false" x="0" y="0"/>
+   <anim name="danceLeft" anim="IFU danceleft" fps="16" loop="false" x="0" y="0"/>
+   <anim name="danceRight" anim="IFU danceright" fps="16" loop="false" x="0" y="0"/>
+   <anim name="rise" anim="IFU rise" loop="false" x="0" y="0"/>
+
+</character>
