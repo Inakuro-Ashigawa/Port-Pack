@@ -1,0 +1,14 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.5" name="ifunnyhell" folder="stages/leghell/">
+	<sprite name="bg" x="-1200" y="-550" sprite="abyss" scroll="0.2" scale="2.3" updateHitbox="true"/>
+	<sprite name="fire" x="0" y="150" sprite="FLAMESFLAMESBURNINGFLAMES" scroll="0.2" scale="5" alpha="0.2"/>
+	<sprite name="darkpillar" x="0" y="0" sprite="darkpillar" scroll="0.6" scale="1.7"/>
+	<sprite name="farpillar" x="-180" y="-700" sprite="farpillar" scroll="0.7" scale="1.7"/>
+	<sprite name="midpillar" x="-180" y="-700" sprite="midpillar" scroll="0.8" scale="1.6"/>
+	<sprite name="closepillar" x="-180" y="-700" sprite="closepillar" scroll="0.8" scale="1.3"/>
+	<sprite name="brimstone" x="-200" y="-200" sprite="brimstone" scroll="1" scale="2.3"/>
+	<girlfriend x="460" scroll="0.65"/>
+	<sprite name="plat" x="1075" y="750" sprite="legacy_platform" scroll="1" scale="1"/>
+	<dad x="-200"/>
+	<boyfriend x="1170"/>
+</stage>
