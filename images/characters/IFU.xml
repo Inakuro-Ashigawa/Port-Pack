@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="IFU.png"><SubTexture name="IFU danceleft0000" x="0" y="0" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU danceleft0001" x="1004" y="0" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU danceleft0002" x="2008" y="0" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU danceleft0003" x="3012" y="0" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU danceleft0004" x="4016" y="0" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU danceright0000" x="5020" y="0" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU danceright0001" x="0" y="1404" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU danceright0002" x="1004" y="1404" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU danceright0003" x="2008" y="1404" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU danceright0004" x="3012" y="1404" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU down0000" x="4016" y="1404" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU down0001" x="5020" y="1404" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU down0002" x="0" y="2808" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU down0003" x="1004" y="2808" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU left0000" x="2008" y="2808" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU left0001" x="3012" y="2808" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU left0002" x="4016" y="2808" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU left0003" x="5020" y="2808" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU up0000" x="0" y="4212" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU up0001" x="1004" y="4212" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU up0002" x="2008" y="4212" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU up0003" x="3012" y="4212" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU right0000" x="4016" y="4212" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU right0001" x="5020" y="4212" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU right0002" x="0" y="5616" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU right0003" x="1004" y="5616" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU rise0000" x="2008" y="5616" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU rise0001" x="3012" y="5616" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU rise0002" x="4016" y="5616" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU rise0003" x="5020" y="5616" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU rise0004" x="0" y="7020" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU rise0005" x="1004" y="7020" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU rise0006" x="2008" y="7020" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU rise0007" x="3012" y="7020" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU rise0008" x="4016" y="7020" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU rise0009" x="5020" y="7020" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU rise0010" x="0" y="8424" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU rise0011" x="1004" y="8424" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+<SubTexture name="IFU rise0012" x="2008" y="8424" width="1004" height="1404" frameX="0" frameY="0" frameWidth="1004" frameHeight="1404" />
+</TextureAtlas>
