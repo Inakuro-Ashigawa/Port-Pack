@@ -1,0 +1,10 @@
+<!DOCTYPE codename-engine-stage>
+<stage folder="stages/Week2/" zoom="0.9">
+	<combo x="588.5" y="517"/>
+	<sprite sprite="back" name="back"/>
+	<sprite sprite="cutout2" name="cutout2"/>
+	<dad x="574.9" y="563.65"/>
+	<gf x="873.25" y="387.85"/>
+	<bf x="1147.65" y="493.7"/>
+	<sprite sprite="overlay" name="overlay"/>
+</stage>
