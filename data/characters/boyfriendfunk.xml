@@ -1,0 +1,15 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="funkadelix/boyfriendfunk" isPlayer="true" flipX="true" holdTime="5" camx="-200"> <!-- CONVERTED VIA psychjsontocodenamexml.py by Burgerballs -->
+
+   <anim name="idle" anim="idle" loop="false" x="0" y="0"/>
+   <anim name="hey" anim="YEAH" loop="false" x="12" y="10"/>
+   <anim name="singLEFTmiss" anim="left miss" loop="false" x="104" y="-7"/>
+   <anim name="singLEFT" anim="left0" loop="false" x="104" y="-7"/>
+   <anim name="singDOWN" anim="down0" loop="false" x="42" y="-44"/>
+   <anim name="singUP" anim="up0" loop="false" x="-2" y="31"/>
+   <anim name="singRIGHT" anim="right0" loop="false" x="-65" y="-10"/>
+   <anim name="singDOWNmiss" anim="down miss" loop="false" x="42" y="-46"/>
+   <anim name="singUPmiss" anim="up miss" loop="false" x="0" y="31"/>
+   <anim name="singRIGHTmiss" anim="right miss" loop="false" x="-65" y="-10"/>
+
+</character>

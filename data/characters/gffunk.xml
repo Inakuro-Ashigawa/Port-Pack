@@ -1,0 +1,18 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="funkadelix/gffunk" isPlayer="false" isGF="true" flipX="false" holdTime="5" camx="-170" camy="70"> <!-- CONVERTED VIA psychjsontocodenamexml.py by Burgerballs -->
+
+   <anim name="cheer" anim="cheer" loop="false" x="-9" y="-6"/>
+   <anim name="singLEFT" anim="left" loop="false" x="-21" y="-10"/>
+   <anim name="singDOWN" anim="down" loop="false" x="4" y="-45"/>
+   <anim name="singUP" anim="up" loop="false" x="-18" y="-5"/>
+   <anim name="singRIGHT" anim="right" loop="false" x="-23" y="-7"/>
+   <anim name="sad" anim="crying" loop="false" x="-3" y="-9"/>
+   <anim name="danceLeft" anim="idle" loop="false" x="0" y="0" indices="30,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14"/>
+   <anim name="danceRight" anim="idle" loop="false" x="0" y="0" indices="15,16,17,18,19,20,21,22,23,24,25,26,27,28,29"/>
+   <anim name="freestyle" anim="freestyle" loop="false" x="8" y="-6"/>
+   <anim name="singLEFT-alt" anim="l-alt" loop="false" x="-23" y="-8"/>
+   <anim name="singDOWN-alt" anim="d-alt" loop="false" x="3" y="-44"/>
+   <anim name="singUP-alt" anim="u-alt" loop="false" x="-18" y="-4"/>
+   <anim name="singRIGHT-alt" anim="r-alt" loop="false" x="-23" y="-6"/>
+
+</character>

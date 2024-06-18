@@ -1,0 +1,11 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="1" name="forest" folder="stages/transformation/" startCamPosY="450" startCamPosX="500">
+	<combo> <property type="bool" name="visible" value="false"/> </combo>
+	<sprite name="bg" x="-1000" y="-1100" sprite="forest" scroll="1" scale="1"/>
+	<sprite name="gfshadow" x="375" y="650" sprite="shadowBlueyes" scroll="1" scale="1"/>
+	<girlfriend scroll="1"/>
+	<sprite name="dadshadow" x="50" y="850" sprite="shadowPurplehair" scroll="1" scale="1"/>
+	<dad y="200"/>
+	<sprite name="bfshadow" x="800" y="800" sprite="shadowBF" scroll="1" scale="1"/>
+	<boyfriend y="200"/>
+</stage>

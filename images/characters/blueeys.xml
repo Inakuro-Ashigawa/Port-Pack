@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="blueeyes.png">
+<SubTexture name="idle0000" x="0" y="0" width="371" height="585" frameX="0" frameY="0" frameWidth="371" frameHeight="585" />
+<SubTexture name="idle0001" x="0" y="0" width="371" height="585" frameX="0" frameY="0" frameWidth="371" frameHeight="585" />
+<SubTexture name="idle0002" x="371" y="0" width="371" height="585" frameX="0" frameY="0" frameWidth="371" frameHeight="585" />
+<SubTexture name="idle0003" x="371" y="0" width="371" height="585" frameX="0" frameY="0" frameWidth="371" frameHeight="585" />
+</TextureAtlas>
