@@ -1,0 +1,24 @@
+{
+    "params": [
+        {
+            "name": "Action",
+            "type": "DropDown('Add Text', 'Force remove all text', 'Set Color', 'Set Border Color', 'Set Size', 'Set Font', 'Enable text history (On, Off)')",
+            "defaultValue": "Add Text"
+        },
+        {
+            "name": "Value",
+            "type": "String",
+            "defaultValue": ""
+        },
+        {
+            "name": "Color (for 'Set Color')",
+            "type": "ColorWheel",
+            "defaultValue": "#FFFFFF"
+        },
+        {
+            "name": "On or Off, (For any 'On, Off' actions)",
+            "type": "Bool",
+            "defaultValue": "false"
+        }
+    ]
+}
