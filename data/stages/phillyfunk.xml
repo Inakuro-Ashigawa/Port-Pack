@@ -1,0 +1,20 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.8" name="angry" folder="stages/philly/" startCamPosX="500" startCamPosY="0">
+	<combo> <property type="bool" name="visible" value="false"/> </combo>
+	<sprite name="sky" x="-500" y="-400" sprite="philly" scroll="0.2" scale="0.8">
+		<anim name="bg" anim="sky"/>
+	</sprite>
+	<sprite name="buildings" x="-975" y="-650" sprite="philly" scroll="0.8" scale="1.2" updateHitbox="true" alpha="1">
+		<anim name="bg" anim="buildings"/>
+	</sprite>
+	<sprite name="beams" x="-650" y="-700" sprite="philly" scroll="0.9" scale="1" updateHitbox="true" alpha="1">
+		<anim name="bg" anim="beams"/>
+	</sprite>
+	<sprite name="roof" x="-600" y="-725" sprite="philly" scroll="1" scale="1" updateHitbox="true">
+		<anim name="bg" anim="roof"/>
+	</sprite>
+	<girlfriend x="540" y="0"/>
+	<dad x="150" y="75"/>
+	<boyfriend x="940" y="125"/>
+	<sprite name="overlay" x="-600" y="-725" sprite="overlay" scroll="0" scale="1"/>
+</stage>
