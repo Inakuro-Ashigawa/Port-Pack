@@ -11,7 +11,7 @@ import flixel.tweens.FlxTweenType;
 import funkin.game.Note;
 
 var blue:CustomShader;
-var note = new CustomShader('Silly/3D');
+var Peaknote = new CustomShader('Silly/3D');
 
 var StrumsCamera = new FlxCamera(); 
 
@@ -30,16 +30,15 @@ var i:Int = 0;
 
 function onNoteCreation(e) {
  e.note.alpha = 0.6;
+
 }
 
 function onPostStrumCreation() {
 
       for (e in strumLines.members[0]) {
-            remove(e);
             e.camera = camGame;
             e.scrollFactor.set(1,1);
             e.alpha = 0.6;
-            //insert(members.indexOf(dad) - 1, cpuStrums);
       }
 
 }
@@ -48,6 +47,7 @@ function onPostStrumCreation() {
 
 function create() {
     //player.cpu = true;
+    remove(dad);
 
     blue = new CustomShader('Silly/blue');
     blue.hue = 1.3;
@@ -67,10 +67,10 @@ function create() {
 
     lyric  = new FlxSprite(910 + 45, 600 + -5);
     lyric.frames = Paths.getFrames('misc/lyric/lyric');
-    lyric.animation.addByPrefix('Proud', 'billy', 24 ,false);
+    lyric.animation.addByPrefix('Proud', 'billy', 24.8 ,false);
     lyric.antialiasing = true;
-    lyric.scale.x = 1.37;
-    lyric.scale.y = 1.37;
+    lyric.scale.x = 1;
+    lyric.scale.y = 1;
     lyric.alpha = 0.0000001;
     insert(11, lyric);
 
@@ -132,8 +132,7 @@ function update(elapsed:Float){
             if(i > strumLines.members.length) {
                   i = 0;
             }
-            //e.y = dad.y + 100;
-            //e.x = dad.x + i * 80;
+            e.y = dad.y + -300;
             e.alpha = 0.3;
       }
 }
@@ -206,6 +205,9 @@ if(eventName == "ill make"){
  }
 }
 function postCreate(){
+
+
+
     healthBar.visible = false;
     healthBarBG.visible = false;
     for (i in [scoreTxt, missesTxt, accuracyTxt,iconP2])
@@ -214,6 +216,10 @@ function postCreate(){
     var vig = new FlxSprite().loadGraphic(Paths.image('misc/vignette'));
     vig.cameras = [camHUD];
     add(vig);
+
+    for (i in 0...cpuStrums.members.length) {
+		cpuStrums.members[i].x = i * 200 + 800;
+    }
 }
 function setzoom(zoom){
     defaultCamZoom = zoom;
@@ -221,6 +227,7 @@ function setzoom(zoom){
 }
 function postUpdate(){
    iconP2.x = -999;
+   insert(999, dad);
 }
 function singing(words){
     trace(words);
