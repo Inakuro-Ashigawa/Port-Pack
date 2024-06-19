@@ -21,7 +21,7 @@ var camExtra:FlxCamera;
 var cutsceneCamera:FlxCamera;
 var camZoomLock = false;
 var lyric:FlxSprite;
-var MyWay = new FlxVideoSprite();
+var HollowPurple = new FlxVideoSprite();
 var dadZoom:Float = 0.625;
 var bfZoom:Float = .5;
 var elapsedTime:Float = 0;
@@ -46,7 +46,7 @@ function onPostStrumCreation() {
 
 
 function create() {
-    //player.cpu = true;
+    player.cpu = true;
     remove(dad);
 
 
@@ -66,10 +66,11 @@ function create() {
         Opening.load(Assets.getPath(Paths.file("videos/Silly/open.mp4")));
 
 
-        MyWay.load(Assets.getPath(Paths.file("videos/Silly/SO_STAY_FINAL.mp4")));  
-        MyWay.cameras = [camSilly];
-        //MyWay.x + 50;
-        add(MyWay);
+        HollowPurple.load(Assets.getPath(Paths.file("videos/Silly/Hollow Purple.mp4")));  
+        HollowPurple.cameras = [camSilly];
+        //mutes Hollow Purple lol
+        HollowPurple.bitmap.volume = 0;
+        add(HollowPurple);
     }
 
     lyric  = new FlxSprite(910 + 45, 600 + -5);
@@ -107,19 +108,19 @@ function create() {
 }
 //pauses videos
 function onSubstateOpen(event) {
-if (MyWay != null && Opening != null && paused)
+if (HollowPurple != null && Opening != null && paused)
     Opening.pause(); 
-    MyWay.pause();
+    HollowPurple.pause();
 }
 function onSubstateClose(event){ 
-    if (MyWay != null && Opening != null && paused) 
+    if (HollowPurple != null && Opening != null && paused) 
     Opening.resume(); 
-    MyWay.resume();
+    HollowPurple.resume();
 }
 function focusGained(){
-    if (MyWay != null && Opening != null && !paused) 
+    if (HollowPurple != null && Opening != null && !paused) 
     Opening.resume(); 
-    MyWay.resume();
+    HollowPurple.resume();
 }
 
 function onCountdown(event)
@@ -128,12 +129,12 @@ function onCountdown(event)
     camHUD.alpha = 0.00000000000001;
 
 function onSongStart(){
-    //if (FlxG.save.data.Videos)Opening.play();
+    if (FlxG.save.data.Videos)Opening.play();
     camGame.alpha = 1;
     camHUD.alpha = 1;
 }
 function meway(){
-    MyWay.play();
+    HollowPurple.play();
     camHUD.alpha = 0.00000000000001;
     vocals.volume = 2;
 }
@@ -162,11 +163,11 @@ function things(eventName, value1){
 if(eventName == "ill make"){
   switch(value1){
     case 'vid':
-        trace('hi!');
-        if (FlxG.save.data.Videos)MyWay.play();
+        if (FlxG.save.data.Videos)HollowPurple.play();
         inst.volume = 2;
         camHUD.alpha = 1;
-        lyric.alpha = 0.0000000000000000001;
+        //dont ask.....
+        lyric.alpha = 0.00000001;
         dad.alpha = 1;
         camGame.flash(0xFF000000, 2);
         camGame.zoom = 1.1;   
@@ -191,8 +192,8 @@ if(eventName == "ill make"){
       defaultCamZoom = 0.5;
 
     case 'anim':    
-        vocals.volume = 3;
-        inst.volume = 1.2;
+        vocals.volume = .8;
+        inst.volume = .7;
         lyric.alpha = 1;
         dad.alpha = 0.0000000001;
         lyric.animation.play('Proud');
@@ -204,13 +205,13 @@ if(eventName == "ill make"){
         FlxTween.num(255, 0, 1.75, {ease: FlxEase.quadOut, onUpdate: function(twn)        {       broken.setColorTransform(1,1,1,1,twn.value,twn.value,twn.value,0); } } );
         camera.shake(0.01, 0.25);
         camGame.shake(0.01, 0.25);
-        FlxG.sound.play(Paths.sound("SB/mirror_break"),2);
+        FlxG.sound.play(Paths.sound("SB/mirror_break"), 10);
 
      case 'no-vid':
-        if (FlxG.save.data.Videos)remove(MyWay);
+        if (FlxG.save.data.Videos)remove(HollowPurple);
         blackScreen.alpha = 1;
         FlxG.camera.addShader(blue);
-        FlxG.camHUD.addShader(blue);
+        camHUD.addShader(blue);
     case 'fadein':
         for (i in playerStrums.members) 
 	     FlxTween.tween(i, {alpha:1}, 2, {ease: FlxEase.smootherStepInOut});
@@ -219,7 +220,8 @@ if(eventName == "ill make"){
          FlxTween.tween(blackScreen, {alpha: 0}, 2, {ease: FlxEase.quadOut});
         for (i in playerStrums.members) 
 	     FlxTween.tween(i, {x: i.x + 300}, 2, {ease: FlxEase.smootherStepInOut});
-
+    case 'end':
+        blackScreen.alpha = 1;
 
   }
  }
