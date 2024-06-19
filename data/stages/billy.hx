@@ -49,6 +49,13 @@ function create() {
     //player.cpu = true;
     remove(dad);
 
+
+    camSilly = new FlxCamera();
+	camSilly.bgColor = 0;
+    FlxG.cameras.remove(camHUD, false);
+    FlxG.cameras.add(camSilly, false);
+	FlxG.cameras.add(camHUD, false);
+
     blue = new CustomShader('Silly/blue');
     blue.hue = 1.3;
     blue.pix = 0.00001;
@@ -60,8 +67,8 @@ function create() {
 
 
         MyWay.load(Assets.getPath(Paths.file("videos/Silly/SO_STAY_FINAL.mp4")));  
-        MyWay.cameras = [camGame];
-        MyWay.x + 50;
+        MyWay.cameras = [camSilly];
+        //MyWay.x + 50;
         add(MyWay);
     }
 
@@ -69,8 +76,7 @@ function create() {
     lyric.frames = Paths.getFrames('misc/lyric/lyric');
     lyric.animation.addByPrefix('Proud', 'billy', 24.8 ,false);
     lyric.antialiasing = true;
-    lyric.scale.x = 1;
-    lyric.scale.y = 1;
+    lyric.scale.set(1.37,1.35);
     lyric.alpha = 0.0000001;
     insert(11, lyric);
 
@@ -98,6 +104,22 @@ function create() {
     broken.useColorTransform = true;
 
 
+}
+//pauses videos
+function onSubstateOpen(event) {
+if (MyWay != null && Opening != null && paused)
+    Opening.pause(); 
+    MyWay.pause();
+}
+function onSubstateClose(event){ 
+    if (MyWay != null && Opening != null && paused) 
+    Opening.resume(); 
+    MyWay.resume();
+}
+function focusGained(){
+    if (MyWay != null && Opening != null && !paused) 
+    Opening.resume(); 
+    MyWay.resume();
 }
 
 function onCountdown(event)
@@ -160,12 +182,9 @@ if(eventName == "ill make"){
       var shit = [scoreTxt];
       playerStrums.forEach(function(spr)
       {
-	shit.push(spr);
+	   shit.push(spr);
       });
-      cpuStrums.forEach(function(spr)
-      {
-	shit.push(spr);
-      });
+
 
       for(s in shit){ FlxTween.tween(s, {alpha: 0}, 2, {ease: FlxEase.quadIn}); }
       camZoomLock = true;
@@ -177,28 +196,29 @@ if(eventName == "ill make"){
         lyric.alpha = 1;
         dad.alpha = 0.0000000001;
         lyric.animation.play('Proud');
-        for (i in playerStrums.members) 
-	FlxTween.tween(i, {x: i.x - 300}, .01, {ease: FlxEase.smootherStepInOut});
+     for (i in playerStrums.members) 
+	    FlxTween.tween(i, {x: i.x - 300}, .01, {ease: FlxEase.smootherStepInOut});
 
     case 'break mirror':
         normal.alpha = 0.0000000000001;
         FlxTween.num(255, 0, 1.75, {ease: FlxEase.quadOut, onUpdate: function(twn)        {       broken.setColorTransform(1,1,1,1,twn.value,twn.value,twn.value,0); } } );
         camera.shake(0.01, 0.25);
         camGame.shake(0.01, 0.25);
-        FlxG.sound.play(Paths.sound("mirror_break"));
+        FlxG.sound.play(Paths.sound("SB/mirror_break"),2);
 
      case 'no-vid':
         if (FlxG.save.data.Videos)remove(MyWay);
         blackScreen.alpha = 1;
         FlxG.camera.addShader(blue);
+        FlxG.camHUD.addShader(blue);
     case 'fadein':
         for (i in playerStrums.members) 
-	FlxTween.tween(i, {alpha:1}, 2, {ease: FlxEase.smootherStepInOut});
+	     FlxTween.tween(i, {alpha:1}, 2, {ease: FlxEase.smootherStepInOut});
 
     case 'fadeout':
          FlxTween.tween(blackScreen, {alpha: 0}, 2, {ease: FlxEase.quadOut});
-         for (i in playerStrums.members) 
-	FlxTween.tween(i, {x: i.x + 300}, 2, {ease: FlxEase.smootherStepInOut});
+        for (i in playerStrums.members) 
+	     FlxTween.tween(i, {x: i.x + 300}, 2, {ease: FlxEase.smootherStepInOut});
 
 
   }

@@ -1,0 +1,33 @@
+<!DOCTYPE codename-engine-stage>
+<stage folder="stages/exesequel/" zoom="0.5">
+	<sprite scrolly="0.1" x="-1100" y="-600" sprite="SS_sky" scrollx="0.1" name="SS_sky"/>
+	<sprite scrolly="0.2" x="-1125" y="-600" sprite="SS_castle" scrollx="0.2" name="SS_castle"/>
+	
+	<sprite x="-1400" scrolly="0.4" sprite="Starman_BG_Fire_Assets" y="-850" name="fireL" scrollx="0.4">
+
+		<anim x="0" loop="true" y="0" fps="24" anim="fire anim effects" type="loop" name="idle"/>
+	
+	</sprite>
+
+	<sprite scrolly="0.4" x="700" y="-850" sprite="Starman_BG_Fire_Assets" type="loop" scrollx="0.4" name="fireR" >
+		
+		<anim loop="true" x="0" anim="fire anim effects" fps="24" y="0" type="loop" name="idle" indices="8, 9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 3, 4, 5, 6, 7"/>
+	
+	</sprite>
+
+	<sprite x="-950" scrolly="0.55" sprite="SS_farplatforms" y="-600" name="SS_farplatforms" scrollx="0.55"/>
+	<sprite x="835" scrolly="0.55" sprite="SS_POWblock" y="610" name="SS_POWblock" scrollx="0.55"/>
+	<sprite x="-850" scrolly="0.65" sprite="SS_midplatforms" y="-600" name="SS_midplatforms" scrollx="0.65"/>
+	<sprite x="-750" name="SS_floor" sprite="SS_floor" y="-600"/>
+	<gf x="1000" y="1500"/>
+	<dad x="0" y="0"/>
+	<sprite x="1900" name="starmanGF" sprite="SS_GF" y="425">
+		
+		
+		<anim loop="false" x="0" anim="GF Dancing Beat" fps="24" y="0" type="beat" name="danceRight" indices="0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 24"/>	
+		<anim loop="false" x="0" anim="GF Dancing Beat" fps="24" y="0" type="beat" name="danceLeft" indices="15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 28, 29"/>	
+		
+	</sprite>
+	<bf x="1600" y="130"/>
+	<combo/>
+</stage>
