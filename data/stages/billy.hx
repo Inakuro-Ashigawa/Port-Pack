@@ -46,7 +46,7 @@ function onPostStrumCreation() {
 
 
 function create() {
-    player.cpu = true;
+    //player.cpu = true;
     remove(dad);
 
 
