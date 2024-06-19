@@ -6,6 +6,9 @@ import flxanimate.FlxAnimate;
 import openfl.text.TextFormat;
 import flixel.text.FlxTextBorderStyle;
 import openfl.filters.ShaderFilter;
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTweenType;
+import funkin.game.Note;
 
 var blue:CustomShader;
 var note = new CustomShader('Silly/3D');
@@ -21,84 +24,99 @@ var lyric:FlxSprite;
 var MyWay = new FlxVideoSprite();
 var dadZoom:Float = 0.625;
 var bfZoom:Float = .5;
-
-function create() {
-//player.cpu = true;
-
-
-blue = new CustomShader('Silly/blue');
-blue.hue = 1.3;
-blue.pix = 0.00001;
-
-if (FlxG.save.data.Videos){
-Opening = new FlxVideo();
-Opening.onEndReached.add(Opening.dispose);
-Opening.load(Assets.getPath(Paths.file("videos/Silly/open.mp4")));
+var elapsedTime:Float = 0;
+var i:Int = 0;
 
 
-MyWay.load(Assets.getPath(Paths.file("videos/Silly/SO_STAY_FINAL.mp4")));  
-MyWay.cameras = [camGame];
-MyWay.screenCenter();
-MyWay.y += 250;
-MyWay.x += 90;
-MyWay.scale.x = 2;
-MyWay.scale.y = 2;
-MyWay.mute;
-add(MyWay);
+function onNoteCreation(e) {
+ e.note.alpha = 0.6;
 }
 
-lyric  = new FlxSprite(910 + 45, 600 + -5);
-lyric.frames = Paths.getFrames('misc/lyric/lyric');
-lyric.animation.addByPrefix('Proud', 'billy', 24 ,false);
-lyric.antialiasing = true;
-lyric.scale.x = 1.37;
-lyric.scale.y = 1.37;
-lyric.alpha = 0.0000001;
-insert(11, lyric);
+function onPostStrumCreation() {
 
-bars = new FlxSprite().loadGraphic(Paths.image('misc/bars'));
-bars.cameras = [camHUD];
-add(bars);
+      for (e in strumLines.members[0]) {
+            remove(e);
+            e.camera = camGame;
+            e.scrollFactor.set(1,1);
+            e.alpha = 0.6;
+            //insert(members.indexOf(dad) - 1, cpuStrums);
+      }
 
-lyrics = new FlxText();
-lyrics.setFormat(Paths.font("Times New Roman.ttff"), 48, 0xFFcfa92d,FlxTextBorderStyle.OUTLINE, "center");
-lyrics.borderSize = 2;
-lyrics.cameras = [camHUD];
-lyrics.screenCenter(FlxAxes.X);
-lyrics.y = FlxG.height - lyrics.height;
-lyrics.text = '';
-add(lyrics);
+}
 
-blackScreen = new FlxSprite().makeGraphic(1, 1, 0xFF000000);
-blackScreen.scale.set(FlxG.width * 2,FlxG.height * 2);
-blackScreen.updateHitbox();
-blackScreen.scrollFactor.set();
-blackScreen.screenCenter();
-blackScreen.alpha = 0;
-add(blackScreen);
 
-broken.useColorTransform = true;
+
+function create() {
+    //player.cpu = true;
+
+    blue = new CustomShader('Silly/blue');
+    blue.hue = 1.3;
+    blue.pix = 0.00001;
+
+    if (FlxG.save.data.Videos){
+        Opening = new FlxVideo();
+        Opening.onEndReached.add(Opening.dispose);
+        Opening.load(Assets.getPath(Paths.file("videos/Silly/open.mp4")));
+
+
+        MyWay.load(Assets.getPath(Paths.file("videos/Silly/SO_STAY_FINAL.mp4")));  
+        MyWay.cameras = [camGame];
+        MyWay.x + 50;
+        add(MyWay);
+    }
+
+    lyric  = new FlxSprite(910 + 45, 600 + -5);
+    lyric.frames = Paths.getFrames('misc/lyric/lyric');
+    lyric.animation.addByPrefix('Proud', 'billy', 24 ,false);
+    lyric.antialiasing = true;
+    lyric.scale.x = 1.37;
+    lyric.scale.y = 1.37;
+    lyric.alpha = 0.0000001;
+    insert(11, lyric);
+
+    bars = new FlxSprite().loadGraphic(Paths.image('misc/bars'));
+    bars.cameras = [camHUD];
+    add(bars);
+
+    lyrics = new FlxText();
+    lyrics.setFormat(Paths.font("Times New Roman.ttff"), 48, 0xFFcfa92d,FlxTextBorderStyle.OUTLINE, "center");
+    lyrics.borderSize = 2;
+    lyrics.cameras = [camHUD];
+    lyrics.screenCenter(FlxAxes.X);
+    lyrics.y = FlxG.height - lyrics.height;
+    lyrics.text = '';
+    add(lyrics);
+
+    blackScreen = new FlxSprite().makeGraphic(1, 1, 0xFF000000);
+    blackScreen.scale.set(FlxG.width * 2,FlxG.height * 2);
+    blackScreen.updateHitbox();
+    blackScreen.scrollFactor.set();
+    blackScreen.screenCenter();
+    blackScreen.alpha = 0;
+    add(blackScreen);
+
+    broken.useColorTransform = true;
 
 
 }
 
 function onCountdown(event)
-event.cancel();
-camGame.alpha = 0.00000000000001;
-camHUD.alpha = 0.00000000000001;
+    event.cancel();
+    camGame.alpha = 0.00000000000001;
+    camHUD.alpha = 0.00000000000001;
 
 function onSongStart(){
-if (FlxG.save.data.Videos)Opening.play();
-camGame.alpha = 1;
-camHUD.alpha = 1;
+    //if (FlxG.save.data.Videos)Opening.play();
+    camGame.alpha = 1;
+    camHUD.alpha = 1;
 }
 function meway(){
-MyWay.play();
-camHUD.alpha = 0.00000000000001;
-vocals.volume = 2;
+    MyWay.play();
+    camHUD.alpha = 0.00000000000001;
+    vocals.volume = 2;
 }
 function fadein(){
-FlxTween.tween(camHUD, {alpha: 1}, 2, {ease: FlxEase.quartOut});
+    FlxTween.tween(camHUD, {alpha: 1}, 2, {ease: FlxEase.quartOut});
 }
 
 function update(elapsed:Float){
@@ -108,6 +126,16 @@ function update(elapsed:Float){
         case 0: defaultCamZoom = dadZoom;
         case 1: defaultCamZoom = bfZoom;
     }
+    elapsedTime += elapsed;
+    for (e in strumLines.members[0]) {
+            i += 1;
+            if(i > strumLines.members.length) {
+                  i = 0;
+            }
+            //e.y = dad.y + 100;
+            //e.x = dad.x + i * 80;
+            e.alpha = 0.3;
+      }
 }
 function things(eventName, value1){
 if(eventName == "ill make"){
@@ -115,7 +143,6 @@ if(eventName == "ill make"){
     case 'vid':
         trace('hi!');
         if (FlxG.save.data.Videos)MyWay.play();
-        vocals.volume = 0;
         inst.volume = 2;
         camHUD.alpha = 1;
         lyric.alpha = 0.0000000000000000001;
@@ -181,8 +208,7 @@ if(eventName == "ill make"){
 function postCreate(){
     healthBar.visible = false;
     healthBarBG.visible = false;
-    iconP2.visible = false;
-    for (i in [scoreTxt, missesTxt, accuracyTxt])
+    for (i in [scoreTxt, missesTxt, accuracyTxt,iconP2])
      i.y -= 40;
 
     var vig = new FlxSprite().loadGraphic(Paths.image('misc/vignette'));
@@ -190,14 +216,14 @@ function postCreate(){
     add(vig);
 }
 function setzoom(zoom){
-defaultCamZoom = zoom;
-FlxG.camera.zoom = zoom;
+    defaultCamZoom = zoom;
+    FlxG.camera.zoom = zoom;
 }
 function postUpdate(){
    iconP2.x = -999;
 }
 function singing(words){
-trace(words);
-lyrics.text = words;
-lyrics.screenCenter(FlxAxes.X);       
+    trace(words);
+    lyrics.text = words;
+    lyrics.screenCenter(FlxAxes.X);       
 }

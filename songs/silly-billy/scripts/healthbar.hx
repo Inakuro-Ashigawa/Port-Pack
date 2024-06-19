@@ -57,6 +57,8 @@ function getRatingFC(accuracy:Float, misses:Int):String {
     }
 }
 function postCreate(){
+    iconP2.visible = false;
+
     bar = new FlxSprite().loadGraphic(Paths.image("misc/Bar/Silly_Healthbar"));
     bar.cameras = [camHUD];
     bar.scale.set(0.5, 0.5);
@@ -149,6 +151,8 @@ function update(elapsed){
     }
     var acc = FlxMath.roundDecimal(Math.max(accuracy, 0) * 100, 2);
     var rating:String = getRating(accuracy);
+    var bar = [actualBar, evilBar];
+    for(b in bar) if (downscroll) b.y = 600;
     getRatingFC(accuracy, misses);
     if (songScore > 0 || acc > 0 || misses > 0) {
         hudTxt.text = "Score: " + songScore + " | Misses: " + misses +  " | Rating: " + rating + " (" + acc + "%)" + " - " + ratingFC;
@@ -171,5 +175,5 @@ function shits(eventName, value1){
 
 function onDadHit(note) {
 if (health > 0.1) 
-health -= .025* 0.5;
+health -= .025* 0.6;
 }
