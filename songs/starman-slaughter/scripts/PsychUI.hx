@@ -12,23 +12,12 @@ import openfl.display.Sprite;
 import openfl.text.TextField;
 import openfl.text.TextFormat;
 import openfl.ui.Keyboard;
-import funkin.backend.system.framerate.Framerate;
-import funkin.backend.system.framerate.FramerateCounter;
 import openfl.system.System;
 import openfl.text.TextFormat;
 import openfl.Lib;
 import flixel.FlxG;
 import funkin.options.Options;
 
-// fps vars
-var finalFPS:Float = 0;
-var memories = Math.abs(FlxMath.roundDecimal(System.totalMemory / 1000000, 1));
-var camFPS = null;
-var fpsfunniCounter:FlxText;
-
-var cacheCount:Int;
-var currentTime:Float;
-var times:Array<Float>;
 
 var colouredBar = (dad != null && dad.xml != null && dad.xml.exists("color")) ? CoolUtil.getColorFromDynamic(dad.xml.get("color")) : 0xFFFFFFFF;
 var sicks:Int = 0;
@@ -124,23 +113,8 @@ function create() {
     timeBar.cameras = [camHUD];
     timeBarBG.cameras = [camHUD];
     timeTxt.cameras = [camHUD];
-    //PauseSubState.script = 'data/scripts/funnypause';
+    PauseSubState.script = 'data/scripts/MMPause';
 
-    FlxG.cameras.add(camFPS = new HudCamera(), false);
-    camFPS.bgColor = 0;
-    fpsfunniCounter = new FlxText(10, 8, 400, 18);
-    fpsfunniCounter.setFormat(Paths.font("MM/Mario2.ttf", 10, 0xFFf42626));
-    fpsfunniCounter.antialiasing = true;
-    fpsfunniCounter.scrollFactor.set();
-    fpsfunniCounter.cameras = [camFPS];
-    add(fpsfunniCounter);
-    cacheCount = 0;
-    currentTime = 0;
-    times = [];
-    finalFPS = 0;
-    Framerate.fpsCounter.visible = false;
-    Framerate.memoryCounter.visible = false;
-    Framerate.codenameBuildField.visible = false;
 }
 
 function onSongStart() for (i in [timeBar, timeBarBG, timeTxt, botplayTxt]) FlxTween.tween(i, {alpha: 1}, 0.5, {ease: FlxEase.circOut});
@@ -160,13 +134,6 @@ function update(elapsed:Float) {
     if (songScore > 0 || acc > 0 || misses > 0) hudTxt.text = "Score: " + songScore + "    Misses: " + misses +  "    Rating: " + rating + " (" + acc + "%)";
 
 
-
-    finalFPS = CoolUtil.fpsLerp(finalFPS, FlxG.elapsed == 0 ? 0 : (1 / FlxG.elapsed), 0.25);
-    fpsfunniCounter.text = "FPS: " + Std.string(Math.floor(finalFPS)) + "\nMemory: " + memories + " MB";
-
-    if (memories == 3000 || finalFPS <= FlxG.save.data.Framerate / 2) {
-        fpsfunniCounter.color = FlxColor.RED;
-    }
 }
 
 function onPlayerHit(event) {
@@ -218,5 +185,3 @@ function postCreate() {
     
     if (FlxG.save.data.showTxt) hudTxt.visible = false;
 }
-
-function destroy() for (i in [Framerate.fpsCounter, Framerate.memoryCounter, Framerate.codenameBuildField]) i.visible = true;

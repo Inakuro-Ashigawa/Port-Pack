@@ -58,8 +58,8 @@ function create(){
     add(porterLine1);
     add(porterLine2);
 
-   camSong.bgColor = 0;
-   camSong.alpha = 1;
+    camSong.bgColor = 0;
+    camSong.alpha = 1;
     FlxG.cameras.remove(camHUD, false);
     FlxG.cameras.add(camHUD, false);
     FlxG.cameras.add(camSong, false);

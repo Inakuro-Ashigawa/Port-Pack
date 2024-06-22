@@ -16,7 +16,7 @@
 	</sprite>
 
 	<sprite x="-950" scrolly="0.55" sprite="SS_farplatforms" y="-600" name="SS_farplatforms" scrollx="0.55"/>
-	<sprite x="835" scrolly="0.55" sprite="SS_POWblock" y="610" name="SS_POWblock" scrollx="0.55"/>
+	<sprite x="835" scrolly="0.55" sprite="SS_POWblock" y="610" name="pow" scrollx="0.55"/>
 	<sprite x="-850" scrolly="0.65" sprite="SS_midplatforms" y="-600" name="SS_midplatforms" scrollx="0.65"/>
 	<sprite x="-750" name="SS_floor" sprite="SS_floor" y="-600"/>
 	<gf x="1000" y="1500"/>
