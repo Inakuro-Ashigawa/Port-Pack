@@ -2,7 +2,7 @@ import flixel.text.FlxTextBorderStyle;
 import flixel.text.FlxTextFormatMarkerPair;
 import flixel.text.FlxTextFormat;
 import flixel.text.FlxText.FlxTextAlign;
-
+var camLyric:FlxCamera;
 /*
 
 Script by bctix
@@ -25,6 +25,12 @@ var textGroup:FlxTypedGroup;
 
 function create()
 {
+    camLyric = new FlxCamera();
+	camLyric.bgColor = 0;
+    FlxG.cameras.remove(camHUD, false);
+    FlxG.cameras.add(camLyric, false);
+	FlxG.cameras.add(camHUD, false);
+
     textGroup = new FlxTypedGroup();
     add(textGroup);
 }
@@ -82,7 +88,7 @@ function addText(setText)
     text.screenCenter(FlxAxes.X);
     text.x += lyricsConfig.xOffset;
     text.y += lyricsConfig.yOffset;
-    text.cameras = [camHUD];
+    text.cameras = [camLyric];
     textGroup.add(text);
 }
 

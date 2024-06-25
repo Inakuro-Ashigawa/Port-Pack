@@ -2,7 +2,7 @@
     "params": [
         {
             "name": "Action",
-            "type": "DropDown('Add Text', 'Force remove all text', 'Set Color', 'Set Border Color', 'Set Size', 'Set Font', 'Enable text history (On, Off)')",
+            "type": "DropDown('Add Text', 'Force remove all text', 'Set Color', 'Set Border Color', 'Set Size', 'Set Font', 'Center', 'Enable text history (On, Off)')",
             "defaultValue": "Add Text"
         },
         {

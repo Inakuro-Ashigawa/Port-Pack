@@ -1,0 +1,11 @@
+<!DOCTYPE codename-engine-stage>
+<stage folder="stages/kitchen/" zoom="0.35">
+	<gf x="400" y="130"/>
+	<sprite x="-931" y="-387" sprite="bg3" scale="2" name="bg3"/>
+	<sprite x="-931" y="-387" sprite="bg2" scale="2" name="bg2"/>
+	<sprite x="-931" sprite="bg" y="-387" scale="2" name="bg"/>
+	<combo x="2388.5" y="-672"/>
+	<bf x="2845" y="-805"/>
+	<dad x="-725" y="-895"/>
+	<sprite x="-174" y="63" sprite="Black" scale="5" name="Black"/>
+</stage>
