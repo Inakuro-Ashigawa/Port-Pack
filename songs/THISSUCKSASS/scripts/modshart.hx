@@ -49,4 +49,6 @@ function beatHit(curBeat) {
 		strumLines.members[0].characters[1].visible = true;
 		strumLines.members[0].characters[2].visible = false;
 	}
+	if (curBeat = 660) FlxTween.tween(black, {alpha: 0}, 0.8, {ease:FlxEase.quadInOut});
+
 }
